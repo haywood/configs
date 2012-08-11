@@ -1,7 +1,15 @@
-;;; set non-package-sepcific defaults and variables
+;;; set non-package-specific defaults and variables
 
 (setq-default inhibit-startup-screen t
-              initial-scratch-message nil)
+              initial-scratch-message nil
+              font-lock-use-colors t
+              font-lock-maximum-decoration t
+              font-lock-maximum-size nil
+              global-font-lock-mode t
+              user-full-name "Michael Reed"
+              display-warning-minimum-level 'error
+              delete-key-deletes-forward t
+              display-time-day-and-date t)
 
 (setq auto-mode-alist
       (append
@@ -10,6 +18,18 @@
        auto-mode-alist))
 
 ;;; package stuff
+
+(require 'font-lock)
+(if (fboundp 'global-font-lock-mode)
+    (global-font-lock-mode t))
+(make-face 'trailing-spaces-face "Face to display trailing spaces in.")
+(add-hook 'font-lock-mode-hook                                ; Show
+                                        ; trailing spaces and make
+                                        ; fixme tags standout
+          (lambda ()
+            (font-lock-add-keywords nil
+                                    '(("[ \t]+$" 0 'trailing-spaces-face t)
+                                      ("AEK:?\\|FIXME:\\|TODO:\\|BUG:" 0 'font-lock-warning-face t)))))
 
 (require 'package)
 (add-to-list 'package-archives

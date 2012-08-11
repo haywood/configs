@@ -1,10 +1,30 @@
-# Contains aliases, shell options, and functions
+#################
+# Function Defs #
+#################
+
+function current_branch { git branch 2> /dev/null | grep \* | sed -e s/\*\ \*//; }
+
+function silent { $@ > /dev/null 2>&1; }
+
+#################
+# Start Daemons #
+#################
+
+silent unalias emacs
+if [ -z "`pgrep emacs`" ]; then
+    silent emacs --daemon &
+fi
+
+##################################################
+# Contains aliases, shell options, and functions #
+##################################################
+EMACS_CMD="emacsclient -nw -a ''"
 
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
 export HISTTIMEFORMAT="%H:%M > "
 export HISTIGNORE="&:bg:fg:ll:h"
 export LESSCHARSET='latin1'
-export EDITOR="emacs"
+export EDITOR=$EMACS_CMD
 export PAGER="less"
 
 shopt -s autocd
@@ -32,7 +52,7 @@ unset MAILCHECK
 alias c=clear
 alias cp="cp -i"
 alias e=exit
-alias emacs="emacs -nw"         # keep emacs in terminal
+alias emacs="$EMACS_CMD"
 alias h=history
 alias j=jobs
 alias l="ls -1"
@@ -43,11 +63,18 @@ alias mv="mv -i"
 alias path='echo -e ${PATH//:/\\n}'
 alias rm="rm -i"
 alias time="/usr/bin/time -p"
+alias top="top -o cpu"
 alias unlink="unlink -i"
-
-function current_branch {
-    git branch 2> /dev/null | grep \* | sed -e s/\*\ \*//;
-}
 
 PS1="\u@\h:
 \w(\`current_branch\`)> "
+
+#################
+# OS X Specific #
+#################
+
+if [ `uname` == Darwin ]; then
+    defaults write com.apple.Finder AppleShowAllFiles YES
+    defaults write loginwindow AutoLaunchedApplicationDictionary -array-add \
+        '<dict><key>Path</key><string>/usr/bin/ssh-agent</string></dict>'
+fi 
