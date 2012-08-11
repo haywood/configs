@@ -1,3 +1,16 @@
+;;; set non-package-sepcific defaults and variables
+
+(setq-default inhibit-startup-screen t
+              initial-scratch-message nil)
+
+(setq auto-mode-alist
+      (append
+       '(("bashrc\\'" . shell-script-mode)
+         ("config\\'" . conf-mode))
+       auto-mode-alist))
+
+;;; package stuff
+
 (require 'package)
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)

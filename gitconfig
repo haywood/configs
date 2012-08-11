@@ -1,0 +1,11 @@
+[alias]
+        co = checkout
+        lo = log
+        wc = whatchanged -p
+        st = status
+        cam = commit -a -m
+        com = commit -m
+        pl = pull
+        ps = push
+        br = branch
+        hist = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %C(bold green)(%cr) %C(magenta bold)<%an>%Creset' --abbrev-commit --date=relative
