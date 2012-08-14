@@ -57,7 +57,7 @@ alias h=history
 alias j=jobs
 alias l="ls -1"
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
-alias mkdir="mkdir-p"
+alias mkdir="mkdir -p"
 alias more="less"
 alias mv="mv -i"
 alias path='echo -e ${PATH//:/\\n}'
@@ -75,6 +75,4 @@ PS1="\u@\h:
 
 if [ `uname` == Darwin ]; then
     defaults write com.apple.Finder AppleShowAllFiles YES
-    defaults write loginwindow AutoLaunchedApplicationDictionary -array-add \
-        '<dict><key>Path</key><string>/usr/bin/ssh-agent</string></dict>'
 fi 
