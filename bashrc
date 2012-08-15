@@ -75,6 +75,4 @@ PS1="\u@\h:
 
 if [ `uname` == Darwin ]; then
     defaults write com.apple.Finder AppleShowAllFiles YES
-    defaults write loginwindow AutoLaunchedApplicationDictionary -array-add \
-        '<dict><key>Path</key><string>/usr/bin/ssh-agent</string></dict>'
 fi 
