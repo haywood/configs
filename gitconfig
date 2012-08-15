@@ -1,4 +1,5 @@
 [alias]
+        cp = cherry-pick
         co = checkout
         lo = log
         wc = whatchanged -p

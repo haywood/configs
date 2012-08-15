@@ -39,7 +39,8 @@
 (require 'starter-kit)
 
 (require 'paredit)
-(loop for mode in '(c-mode-hook
+(loop for mode in '(nxhtml-mode-hook
+                    c-mode-hook
                     c++-mode-hook
                     java-mode-hook
                     js-mode-hook
