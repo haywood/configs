@@ -1,1 +1,15 @@
 A place to keep general purpose config files.
+
+Here's how to include in your local config files:
+       gitconfig (requires git >= 1.7.10)
+                [include]
+                        path = configs/gitconfig
+       
+       bashrc
+                source ~/configs/bashrc
+
+       ssh_config
+                Sadly, there is currently no way to do this :(
+
+       init.el
+                (load "~/configs/init.el")

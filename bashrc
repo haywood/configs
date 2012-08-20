@@ -6,15 +6,6 @@ function current_branch { git branch 2> /dev/null | grep \* | sed -e s/\*\ \*//;
 
 function silent { $@ > /dev/null 2>&1; }
 
-#################
-# Start Daemons #
-#################
-
-silent unalias emacs
-if [ -z "`pgrep emacs`" ]; then
-    silent emacs --daemon &
-fi
-
 ##################################################
 # Contains aliases, shell options, and functions #
 ##################################################
