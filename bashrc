@@ -53,6 +53,7 @@ alias c=clear
 alias cp="cp -i"
 alias e=exit
 alias emacs="$EMACS_CMD"
+alias gsub="git submodule"
 alias h=history
 alias j=jobs
 alias l="ls -1"
