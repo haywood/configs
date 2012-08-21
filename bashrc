@@ -2,7 +2,8 @@
 # Function Defs #
 #################
 
-function current_branch { git branch 2> /dev/null | grep \* | sed -e s/\*\ \*//; }
+# this is where homebrew puts all the bash completion
+source /usr/local/etc/bash_completion.d/*
 
 function silent { $@ > /dev/null 2>&1; }
 
@@ -59,7 +60,7 @@ alias top="top -o cpu"
 alias unlink="unlink -i"
 
 PS1="\u@\h:
-\w(\`current_branch\`)> "
+\w$(__git_ps1 '(%s)')> "
 
 #################
 # OS X Specific #
