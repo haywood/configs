@@ -60,7 +60,7 @@ alias top="top -o cpu"
 alias unlink="unlink -i"
 
 PS1="\u@\h:
-\w$(__git_ps1 '(%s)')> "
+\w\`__git_ps1 '(%s)'\`> "
 
 #################
 # OS X Specific #
@@ -68,4 +68,5 @@ PS1="\u@\h:
 
 if [ `uname` == Darwin ]; then
     defaults write com.apple.Finder AppleShowAllFiles YES
+    alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 fi 
