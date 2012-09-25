@@ -1,12 +1,14 @@
 [alias]
-        cp = cherry-pick
-        co = checkout
-        lo = log
-        wc = whatchanged -p
-        st = status
+        br = branch
         cam = commit -a -m
+        co = checkout
+        cob = checkout -b
         com = commit -m
+        cp = cherry-pick
+        hist = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %C(bold green)(%cr) %C(magenta bold)<%an>%Creset' --abbrev-commit --date=relative
+        lo = log
         pl = pull
         ps = push
-        br = branch
-        hist = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %C(bold green)(%cr) %C(magenta bold)<%an>%Creset' --abbrev-commit --date=relative
+        st = status
+        unstage = checkout HEAD
+        wc = whatchanged -p

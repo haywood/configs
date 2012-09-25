@@ -71,4 +71,5 @@ PS1="\u@\h:
 
 if [ `uname` == Darwin ]; then
     defaults write com.apple.Finder AppleShowAllFiles YES
+    alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 fi 
