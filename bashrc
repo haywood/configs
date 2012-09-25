@@ -3,7 +3,10 @@
 #################
 
 # this is where homebrew puts all the bash completion
-source /usr/local/etc/bash_completion.d/*
+for file in /usr/local/etc/bash_completion.d/*
+do
+	source $file
+done
 
 function silent { $@ > /dev/null 2>&1; }
 
@@ -60,7 +63,7 @@ alias top="top -o cpu"
 alias unlink="unlink -i"
 
 PS1="\u@\h:
-\w$(__git_ps1 '(%s)')> "
+\w\`__git_ps1 '(%s)'\`> "
 
 #################
 # OS X Specific #
