@@ -1,4 +1,5 @@
 [alias]
+        amend=commit --amend
         br = branch
         cam = commit -a -m
         co = checkout
@@ -7,8 +8,10 @@
         cp = cherry-pick
         hist = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %C(bold green)(%cr) %C(magenta bold)<%an>%Creset' --abbrev-commit --date=relative
         lo = log
-        pl = pull
+        pl = pull --rebase
         ps = push
         st = status
+        sh = show --color
+        di = diff --color
         unstage = checkout HEAD
         wc = whatchanged -p

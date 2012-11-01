@@ -39,8 +39,7 @@
 (require 'starter-kit)
 
 (require 'paredit)
-(loop for mode in '(nxhtml-mode-hook
-                    c-mode-hook
+(loop for mode in '(c-mode-hook
                     c++-mode-hook
                     java-mode-hook
                     js-mode-hook
@@ -76,12 +75,6 @@
              ;; files and also on read only files
              (if (and (not (null buffer-file-name)) (file-writable-p buffer-file-name))
                  (flymake-mode))))
-
-;;; hack for making nxhtml work w/out a GUI
-(if (boundp 'image-types) nil
-  (defvar image-types nil))
-
-(load "~/.emacs.d/nxhtml/autostart.el")
 
 (require 'redo+)
 (global-set-key (kbd "C-u") 'undo)

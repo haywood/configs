@@ -13,13 +13,14 @@ function silent { $@ > /dev/null 2>&1; }
 ##################################################
 # Contains aliases, shell options, and functions #
 ##################################################
-EMACS_CMD="emacsclient -nw -a ''"
+EMACS_CMD="emacs -nw"
 
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
 export HISTTIMEFORMAT="%H:%M > "
 export HISTIGNORE="&:bg:fg:ll:h"
 export LESSCHARSET='latin1'
-export EDITOR=$EMACS_CMD
+export EDITOR=vim
+export PGHOST=localhost         # default for postgres
 export PAGER="less"
 
 shopt -s autocd
@@ -37,7 +38,6 @@ shopt -s histreedit
 shopt -s histverify
 shopt -s hostcomplete
 shopt -s no_empty_cmd_completion
-shopt -s nullglob
 shopt -s progcomp
 shopt -s promptvars
 
@@ -59,17 +59,7 @@ alias mv="mv -i"
 alias path='echo -e ${PATH//:/\\n}'
 alias rm="rm -i"
 alias time="/usr/bin/time -p"
-alias top="top -o cpu"
 alias unlink="unlink -i"
 
 PS1="\u@\h:
 \w\`__git_ps1 '(%s)'\`> "
-
-#################
-# OS X Specific #
-#################
-
-if [ `uname` == Darwin ]; then
-    defaults write com.apple.Finder AppleShowAllFiles YES
-    alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-fi 
