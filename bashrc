@@ -2,8 +2,7 @@
 # Function Defs #
 #################
 
-# this is where homebrew puts all the bash completion
-for file in /usr/local/etc/bash_completion.d/*
+for file in /usr/local/etc/bash_completion.d/* /etc/bash_completion.d/*
 do
 	source $file
 done
@@ -30,7 +29,6 @@ shopt -s checkhash
 shopt -s checkjobs
 shopt -s checkwinsize
 shopt -s cmdhist
-shopt -s direxpand
 shopt -s dirspell
 shopt -s globstar
 shopt -s histappend
@@ -63,3 +61,4 @@ alias unlink="unlink -i"
 
 PS1="\u@\h:
 \w\`__git_ps1 '(%s)'\`> "
+
