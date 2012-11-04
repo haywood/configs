@@ -1,3 +1,6 @@
+[user]
+	name = Michael Reed
+	email = mhr2126@gmail.com
 [alias]
         amend=commit --amend
         br = branch
