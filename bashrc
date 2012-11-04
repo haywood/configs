@@ -2,10 +2,7 @@
 # Function Defs #
 #################
 
-for file in /usr/local/etc/bash_completion.d/* /etc/bash_completion.d/*
-do
-	source $file
-done
+[[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
 function silent { $@ > /dev/null 2>&1; }
 
