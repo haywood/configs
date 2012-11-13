@@ -2,7 +2,11 @@
 # Function Defs #
 #################
 
-[[ -f /etc/bash_completion ]] && source /etc/bash_completion
+for prefix in "" /usr /usr/local $HOME 
+do
+  path=$prefix/etc/bash_completion
+  [[ -f $path ]] && source $path
+done
 
 function silent { $@ > /dev/null 2>&1; }
 
