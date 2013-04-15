@@ -59,6 +59,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias rm="rm -i"
 alias time="/usr/bin/time -p"
 alias unlink="unlink -i"
+alias grep="grep -n --color"
 
 PS1="\u@\h:
 \w\`__git_ps1 '(%s)'\`> "
