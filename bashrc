@@ -2,7 +2,7 @@
 # Function Defs #
 #################
 
-for prefix in "" /usr /usr/local $HOME 
+for prefix in "" /usr /usr/local /opt/local /sw $HOME
 do
   path=$prefix/etc/bash_completion
   [[ -f $path ]] && source $path
