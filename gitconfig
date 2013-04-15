@@ -1,6 +1,8 @@
 [user]
 	name = Michael Reed
 	email = mhr2126@gmail.com
+[branch]
+	autosetuprebase = always
 [alias]
         amend=commit --amend
         br = branch
