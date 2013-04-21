@@ -1,8 +1,10 @@
 [user]
-	name = Michael Reed
-	email = mhr2126@gmail.com
+    name = Michael Reed
+    email = mhr2126@gmail.com
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
+[push]
+    default = simple
 [alias]
         amend=commit --amend
         br = branch
