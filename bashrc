@@ -44,7 +44,7 @@ shopt -u mailwarn
 unset MAILCHECK
 
 alias c=clear
-alias cp="cp -i -x"
+alias cp="cp -i"
 alias e=exit
 alias emacs="$EMACS_CMD"
 alias gsub="git submodule"
