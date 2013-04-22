@@ -5,9 +5,12 @@ set smartindent
 set tabstop=4
 set sw=4
 set ff=unix
+set expandtab
 set noswapfile nobackup
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+let g:ctrlp_map = '<C-t>'
+let g:ctrlp_cmd = 'CtrlPMixed'
 nnoremap j gj
 nnoremap k gk
 nnoremap <left> gT
@@ -17,5 +20,12 @@ nmap Q gqap
 nnoremap ; :
 filetype plugin indent on
 syntax on
+
+augroup myfiletypes
+  " Clear old autocmds in group
+  autocmd!
+  " autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,eruby,yaml,scala set ai sw=2 sts=2 ts=2 et
+augroup END
 
 call pathogen#infect()
