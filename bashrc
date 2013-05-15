@@ -17,7 +17,7 @@ EMACS_CMD="emacs -nw"
 
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
 export HISTTIMEFORMAT="%H:%M > "
-export HISTIGNORE="&:bg:fg:ll:h"
+export HISTIGNORE="&:bg:fg:ll:h:clear"
 export LESSCHARSET='latin1'
 export EDITOR=vim
 export PGHOST=localhost         # default for postgres
