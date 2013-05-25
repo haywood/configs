@@ -5,14 +5,3 @@
     autosetuprebase = always
 [push]
     default = simple
-[alias]
-        amend=commit --amend
-        co = checkout
-        cob = checkout -b
-        com = commit -m
-        cp = cherry-pick
-        hist = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %C(bold green)(%cr) %C(magenta bold)<%an>%Creset' --abbrev-commit --date=relative
-        lo = log
-        st = status
-        sh = show --color
-        di = diff --color
