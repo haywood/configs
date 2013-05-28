@@ -43,24 +43,6 @@ shopt -s promptvars
 shopt -u mailwarn
 unset MAILCHECK
 
-alias c=clear
-alias cp="cp -i"
-alias e=exit
-alias emacs="$EMACS_CMD"
-alias gsub="git submodule"
-alias h=history
-alias j=jobs
-alias l="ls -1"
-alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
-alias mkdir="mkdir -p"
-alias more="less"
-alias mv="mv -i"
-alias path='echo -e ${PATH//:/\\n}'
-alias rm="rm -i"
-alias time="/usr/bin/time -p"
-alias unlink="unlink -i"
-alias grep="grep -n --color"
-
 PS1="\u@\h:
 \w\`__git_ps1 '(%s)'\`> "
 
