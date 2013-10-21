@@ -1,3 +1,5 @@
+set textwidth=80
+set wrapmargin=2
 set nocompatible
 set ruler
 set autoindent
@@ -7,8 +9,6 @@ set sw=4
 set ff=unix
 set expandtab
 set noswapfile nobackup
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
 let g:ctrlp_map = '<C-t>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 nnoremap j gj
@@ -17,7 +17,6 @@ nnoremap <left> gT
 nnoremap <right> gt
 vmap Q gq
 nmap Q gqap
-nnoremap ; :
 filetype plugin indent on
 syntax on
 
