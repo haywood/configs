@@ -16,7 +16,7 @@ function silent { $@ > /dev/null 2>&1; }
 EMACS_CMD="emacs -nw"
 
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
-export HISTTIMEFORMAT="%H:%M > "
+export HISTTIMEFORMAT="%H:%M:%S > "
 export HISTIGNORE="&:bg:fg:ll:h:clear"
 export LESSCHARSET='latin1'
 export EDITOR=vim
@@ -43,6 +43,6 @@ shopt -s promptvars
 shopt -u mailwarn
 unset MAILCHECK
 
-PS1="\u@\h:
+PS1="\u@\h (\$(date +%H:%M:%S)):
 \w\`__git_ps1 '(%s)'\`> "
 
