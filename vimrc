@@ -7,7 +7,6 @@ set smartindent
 set tabstop=4
 set sw=4
 set ff=unix
-set expandtab
 set noswapfile nobackup
 let g:ctrlp_map = '<C-t>'
 let g:ctrlp_cmd = 'CtrlPMixed'
