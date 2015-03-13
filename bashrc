@@ -21,7 +21,7 @@ export HISTIGNORE="&:bg:fg:ll:h:clear"
 export LESSCHARSET='latin1'
 export EDITOR=vim
 export PGHOST=localhost         # default for postgres
-export PAGER="less"
+export PAGER=less
 
 shopt -s autocd
 shopt -s cdable_vars

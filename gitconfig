@@ -5,3 +5,5 @@
     autosetuprebase = always
 [push]
     default = simple
+[alias]
+    release = !sh -c 'git tag -m $1 $1 && git push --tags' -
